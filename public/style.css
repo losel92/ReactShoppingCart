@@ -1,0 +1,19 @@
+body {
+  text-align: center !important;
+  font-family: cursive !important;
+}
+
+input[type="text"] {
+  height: 100%;
+}
+
+.aligned-span {
+  line-height: 27px !important;
+  text-align: center;
+}
+
+.btn-lightgray {
+  color: #fff !important;
+  background-color: rgb(153, 157, 154) !important;
+  border-color: rgb(153, 157, 154) !important;
+}
