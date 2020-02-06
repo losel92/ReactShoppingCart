@@ -6,7 +6,7 @@ import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 class Counter extends Component {
   render() {
     return (
-      <div className="d-flex flex-row justify-content-end align-items-stretch m-1">
+      <div className="d-flex flex-row justify-content-end align-items-stretch my-1 w-100">
         <span className={this.getBadgeClasses()}>
           {this.props.counter.value}
         </span>
@@ -20,7 +20,7 @@ class Counter extends Component {
           type="text"
           className="m-2 p-1 rounded"
           placeholder="Add a product..."
-          style={{ width: "100%" }}
+          style={{ width: "100%", height: "auto" }}
           value={this.props.counter.name}
           onChange={e => {
             this.props.onNameChange(this.props.counter, e.target.value)
@@ -35,6 +35,7 @@ class Counter extends Component {
         <button
           onClick={() => this.props.onDelete(this.props.counter)}
           className="btn btn-danger btn-sm m-2"
+          style={{ minWidth: 75, minHeight: 35 }}
         >
           Delete
         </button>

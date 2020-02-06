@@ -4,20 +4,15 @@ import Counter from "./counter"
 class Counters extends Component {
   render() {
     return (
-      <div>
-        <button
-          onClick={this.props.onAdd}
-          className="btn btn-lightgray btn-sm m-2"
-        >
-          Add
-        </button>
+      <div style={{ margin: "auto", maxWidth: 500, textAlign: "right" }}>
         <button
           onClick={this.props.onReset}
           className="btn btn-lightgray btn-sm m-2"
+          style={{ minWidth: 75, minHeight: 35 }}
         >
           Reset
         </button>
-        <div className="d-flex flex-column justify-content-center align-items-center">
+        <div className="d-flex flex-column justify-content-center align-items-end">
           {this.props.counters.map(counter => (
             <Counter
               key={counter.id}
