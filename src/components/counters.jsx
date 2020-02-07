@@ -6,8 +6,15 @@ class Counters extends Component {
     return (
       <div style={{ margin: "auto", maxWidth: 500, textAlign: "right" }}>
         <button
-          onClick={this.props.onReset}
+          onClick={this.props.onClear}
           className="btn btn-lightgray btn-sm m-2"
+          style={{ minWidth: 75, minHeight: 35 }}
+        >
+          Clear
+        </button>
+        <button
+          onClick={this.props.onReset}
+          className="btn btn-lightgray btn-sm mr-2"
           style={{ minWidth: 75, minHeight: 35 }}
         >
           Reset

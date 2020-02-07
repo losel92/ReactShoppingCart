@@ -47,7 +47,9 @@ class Counter extends Component {
   getBadgeClasses() {
     return (
       "aligned-span badge m-2 badge-" +
-      (this.props.counter.name.length <= 0 ? "warning" : "primary")
+      (this.props.counter.name.length <= 0 && this.props.counter.value == 0
+        ? "warning"
+        : "primary")
     )
   }
 }
