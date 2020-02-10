@@ -6,7 +6,7 @@ import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 class Counter extends Component {
   render() {
     return (
-      <div className="d-flex flex-row justify-content-end align-items-stretch my-1 w-100">
+      <div className="d-flex flex-row justify-content-end align-items-stretch w-100">
         <span className={this.getBadgeClasses()}>
           {this.props.counter.value}
         </span>
@@ -47,7 +47,7 @@ class Counter extends Component {
   getBadgeClasses() {
     return (
       "aligned-span badge m-2 badge-" +
-      (this.props.counter.name.length <= 0 && this.props.counter.value == 0
+      (this.props.counter.name.length <= 0 || this.props.counter.value == 0
         ? "warning"
         : "primary")
     )

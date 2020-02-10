@@ -17,3 +17,27 @@ input[type="text"] {
   background-color: rgb(153, 157, 154) !important;
   border-color: rgb(153, 157, 154) !important;
 }
+
+.example-enter {
+  margin-top: -50px;
+  opacity: 0;
+}
+
+.example-enter.example-enter-active {
+  margin-top: 0px;
+  opacity: 1;
+  transition: all 500ms ease-out;
+}
+
+.example-leave {
+  opacity: 1;
+  margin-top: 0px;
+  z-index: -999;
+}
+
+.example-leave.example-leave-active {
+  z-index: -999;
+  opacity: 0.01;
+  margin-top: -50px;
+  transition: all 300ms ease-out;
+}

@@ -54,7 +54,7 @@ class App extends Component {
 
   //Resets and removes all products
   handleReset = () => {
-    let counters = [{ id: 1, value: 1, name: "" }]
+    let counters = [{ id: 1, value: 0, name: "" }]
     this.setState({ counters })
   }
 

@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import Counter from "./counter"
 
+import ReactCSSTransitionGroup from "react-addons-css-transition-group"
+
 class Counters extends Component {
   render() {
     return (
@@ -20,16 +22,22 @@ class Counters extends Component {
           Reset
         </button>
         <div className="d-flex flex-column justify-content-center align-items-end">
-          {this.props.counters.map(counter => (
-            <Counter
-              key={counter.id}
-              onDelete={this.props.onDelete}
-              onIncrement={this.props.onIncrement}
-              onDecrement={this.props.onDecrement}
-              onNameChange={this.props.onNameChange}
-              counter={counter}
-            />
-          ))}
+          <ReactCSSTransitionGroup
+            transitionName="example"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}
+          >
+            {this.props.counters.map(counter => (
+              <Counter
+                key={counter.id}
+                onDelete={this.props.onDelete}
+                onIncrement={this.props.onIncrement}
+                onDecrement={this.props.onDecrement}
+                onNameChange={this.props.onNameChange}
+                counter={counter}
+              />
+            ))}
+          </ReactCSSTransitionGroup>
         </div>
       </div>
     )
