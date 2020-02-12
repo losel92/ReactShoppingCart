@@ -35,12 +35,18 @@ class Counters extends Component {
                 onDecrement={this.props.onDecrement}
                 onNameChange={this.props.onNameChange}
                 counter={counter}
+                isDeletable={this.getDeletable(counter.id)}
               />
             ))}
           </ReactCSSTransitionGroup>
         </div>
       </div>
     )
+  }
+
+  getDeletable = counterId => {
+    const index = this.props.counters.findIndex(x => x.id == counterId)
+    return index < this.props.counters.length - 1
   }
 }
 

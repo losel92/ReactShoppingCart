@@ -5,7 +5,7 @@ import Counters from "./components/counters"
 
 class App extends Component {
   state = {
-    counters: [{ id: 1, value: 0, name: "" }]
+    counters: [{ id: 0, value: 0, name: "" }]
   }
 
   //Increments the product quantity
@@ -22,7 +22,10 @@ class App extends Component {
     const counters = [...this.state.counters]
     const index = counters.indexOf(counter)
     counters[index] = { ...counter }
-    if (counters[index].value > 1) {
+    if (
+      counters[index].value > 1 ||
+      (counters[index].value > 0 && !counters[index].name.length)
+    ) {
       counters[index].value--
       this.setState({ counters })
     }
@@ -45,7 +48,7 @@ class App extends Component {
   //Clears the list
   handleClear = () => {
     let counters = this.state.counters.map(c => {
-      c.value = 1
+      c.value = 0
       c.name = ""
       return c
     })

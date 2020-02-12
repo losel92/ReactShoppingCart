@@ -36,6 +36,7 @@ class Counter extends Component {
           onClick={() => this.props.onDelete(this.props.counter)}
           className="btn btn-danger btn-sm m-2"
           style={{ minWidth: 75, minHeight: 35 }}
+          disabled={!this.props.isDeletable}
         >
           Delete
         </button>
@@ -44,13 +45,20 @@ class Counter extends Component {
   }
 
   //If the count of a product is at 0, it will be displayed with a yellow color
-  getBadgeClasses() {
+  getBadgeClasses = () => {
     return (
       "aligned-span badge m-2 badge-" +
       (this.props.counter.name.length <= 0 || this.props.counter.value == 0
         ? "warning"
         : "primary")
     )
+  }
+
+  //If the product is deletable it will return the button object, otherwise it will return an empty string
+  getDeleteStyle = () => {
+    return this.props.isDeletable
+      ? { minWidth: 75, minHeight: 35 }
+      : { minWidth: 75, minHeight: 35, disabled: true }
   }
 }
 
