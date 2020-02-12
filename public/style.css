@@ -7,6 +7,10 @@ input[type="text"] {
   height: 100%;
 }
 
+nav {
+  background-color: antiquewhite;
+}
+
 .aligned-span {
   line-height: 27px !important;
   text-align: center;
@@ -18,24 +22,24 @@ input[type="text"] {
   border-color: rgb(153, 157, 154) !important;
 }
 
-.example-enter {
+.counterTransition-enter {
   margin-top: -50px;
   opacity: 0;
 }
 
-.example-enter.example-enter-active {
+.counterTransition-enter.counterTransition-enter-active {
   margin-top: 0px;
   opacity: 1;
   transition: all 500ms ease-out;
 }
 
-.example-leave {
+.counterTransition-leave {
   opacity: 1;
   margin-top: 0px;
   z-index: -999;
 }
 
-.example-leave.example-leave-active {
+.counterTransition-leave.counterTransition-leave-active {
   z-index: -999;
   opacity: 0.01;
   margin-top: -50px;

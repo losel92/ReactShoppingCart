@@ -23,7 +23,7 @@ class Counters extends Component {
         </button>
         <div className="d-flex flex-column justify-content-center align-items-end">
           <ReactCSSTransitionGroup
-            transitionName="example"
+            transitionName="counterTransition"
             transitionEnterTimeout={500}
             transitionLeaveTimeout={300}
           >
